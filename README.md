@@ -1,4 +1,4 @@
-# SrEditor - Scanner Rules Editor for Mageia Linux
+# SrEditor - automatic rule editor for scanners
 SrEditor designed for automatically inserting rules for scanners that are not in the lists of rules /etc/udev/rules.d/60-libsane.rules
 
 1. In the list of connected USB-Devices (1), find your scanner that is not recognized when working with XSane and select it with the mouse
