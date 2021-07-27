@@ -5,4 +5,6 @@ SrEditor designed for automatically inserting rules for scanners that are not in
 2. If the device is not in the list of rules, the necessary line (2) will be offered to insert into the file with the rules
 3. Click the button "Plus" (Add & Apply) and restart the computer
 
+It can also be useful: rm -rf ~/.sane
+
 ![](https://github.com/AKotov-dev/sreditor/blob/main/ScreenShot.png)
