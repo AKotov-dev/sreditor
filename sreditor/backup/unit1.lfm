@@ -1,12 +1,12 @@
 object MainForm: TMainForm
   Left = 298
-  Height = 776
-  Top = 58
-  Width = 1001
+  Height = 802
+  Top = 32
+  Width = 984
   ActiveControl = DevListBox
   Caption = 'MainForm'
-  ClientHeight = 776
-  ClientWidth = 1001
+  ClientHeight = 802
+  ClientWidth = 984
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poDesktopCenter
@@ -20,7 +20,7 @@ object MainForm: TMainForm
     Left = 0
     Height = 171
     Top = 50
-    Width = 1001
+    Width = 984
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 4
     Font.Height = -13
@@ -28,7 +28,7 @@ object MainForm: TMainForm
     ItemHeight = 0
     OnClick = DevListBoxClick
     ParentFont = False
-    ScrollWidth = 999
+    ScrollWidth = 982
     TabOrder = 0
     TopIndex = -1
   end
@@ -52,7 +52,7 @@ object MainForm: TMainForm
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Cursor = crHandPoint
-    Left = 932
+    Left = 915
     Height = 42
     Hint = 'Update the list'
     Top = 4
@@ -206,9 +206,9 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = StaticText1
     AnchorSideBottom.Side = asrBottom
     Left = 0
-    Height = 397
+    Height = 423
     Top = 361
-    Width = 1001
+    Width = 984
     Align = alBottom
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Top = 5
@@ -247,7 +247,7 @@ object MainForm: TMainForm
     Left = 0
     Height = 64
     Top = 259
-    Width = 866
+    Width = 849
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 5
     BorderSpacing.Right = 1
@@ -257,6 +257,7 @@ object MainForm: TMainForm
       '...'
     )
     ParentFont = False
+    ReadOnly = True
     TabOrder = 1
   end
   object Label5: TLabel
@@ -282,9 +283,9 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = Memo2
     AnchorSideBottom.Side = asrBottom
     Cursor = crHandPoint
-    Left = 932
+    Left = 915
     Height = 64
-    Hint = 'Loads the default rules'#10'/usr/lib/udev/rules.d/51-android.rules'
+    Hint = 'Loads the default rules'#10'/usr/lib/udev/rules.d/60-libsane.rules'
     Top = 259
     Width = 64
     Anchors = [akTop, akRight, akBottom]
@@ -589,8 +590,8 @@ object MainForm: TMainForm
   object StaticText1: TStaticText
     Left = 0
     Height = 18
-    Top = 758
-    Width = 1001
+    Top = 784
+    Width = 984
     Align = alBottom
     Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru'
     Color = clDefault
@@ -607,7 +608,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = Memo2
     AnchorSideBottom.Side = asrBottom
     Cursor = crHandPoint
-    Left = 867
+    Left = 850
     Height = 64
     Hint = 'Add and Apply'
     Top = 259
@@ -917,7 +918,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = UpdateBtn
     AnchorSideBottom.Side = asrBottom
     Cursor = crHandPoint
-    Left = 883
+    Left = 866
     Height = 42
     Hint = 'About'
     Top = 4
@@ -1064,7 +1065,7 @@ object MainForm: TMainForm
   object Label3: TLabel
     AnchorSideTop.Control = AboutBtn
     AnchorSideRight.Control = AboutBtn
-    Left = 563
+    Left = 546
     Height = 30
     Top = 4
     Width = 316

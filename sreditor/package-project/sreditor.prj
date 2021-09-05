@@ -2,7 +2,7 @@
 name=sreditor
 
 [VERSION]
-version=0.3
+version=0.4
 
 [RELEASE]
 release=0.mrx8
@@ -88,6 +88,10 @@ toolversion=2.0.10
 3=2. If the device is not in the list of rules, the necessary line (2) will be offered to insert into the file with the rules
 4=3. Click the button "Plus" (Add & Apply)
 5=
-6=v0.3
-7=+ the first release. The basis of the project - ArEditor
-8=+ Requires: sane-backends
+6=v0.4
+7=+ selecting the entire found string
+8=+ automatically adding a device description
+9=
+10=v0.3
+11=+ the first release. The basis of the project - ArEditor
+12=+ Requires: sane-backends

@@ -163,13 +163,15 @@ end;
 procedure TMainForm.DevListBoxClick(Sender: TObject);
 var
   v: integer;
-  idVendor, idProduct: string;
+  idVendor, idProduct, Description: string;
 begin
   if DevListBox.Count = 0 then
     Exit;
 
   idVendor := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 24, 4) + '"';
   idProduct := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 29, 4) + '"';
+  Description := Copy(DevListBox.Items[DevListBox.ItemIndex], 34,
+    Length(DevListBox.Items[DevListBox.ItemIndex]));
 
   //Ищем значения вендора и продукт
   v := Pos('ATTRS{idVendor}==' + idVendor + ', ' + 'ATTRS{idProduct}==' +
@@ -179,13 +181,13 @@ begin
   begin
     Memo2.Text := SNoAction;
     Memo1.SelStart := v - 1;
-    Memo1.SelLength := 49;
+    Memo1.SelLength := Length(Memo1.Lines[Memo1.CaretPos.Y]) + 1;
     AddBtn.Enabled := False;
   end
   else
   begin
     Memo2.Clear;
-    Memo2.Lines.Add('# My Scanner');
+    Memo2.Lines.Add('# ' + Description);
     Memo2.Lines.Add('ATTRS{idVendor}==' + idVendor + ', ' +
       'ATTRS{idProduct}==' + idProduct +
       ', MODE="0644", GROUP="usb", ENV{libsane_matched}="yes"');
@@ -203,7 +205,7 @@ begin
     SetFocus;
     SelStart := Pos('# The following rule will disable USB autosuspend for the device',
       Text);
-    Lines.Insert(CaretPos.Y - 1, '');
+    //  Lines.Insert(CaretPos.Y - 1, '');
     Lines.Insert(CaretPos.Y + 0, Memo2.Lines[0]);
     Lines.Insert(CaretPos.Y + 1, Memo2.Lines[1]);
     Lines.Insert(CaretPos.Y + 2, '');
