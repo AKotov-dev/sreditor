@@ -49,6 +49,7 @@ resourcestring
     '/usr/lib/udev/rules.d/60-libsane.rules';
   SNoDevices = 'No devices were found...';
   SRestoreDefault = 'Your changes will be reset! Continue?';
+  SReconnectDevice = 'Reconnect your scanner.';
 
 var
   MainForm: TMainForm;
@@ -218,6 +219,8 @@ begin
 
   //Перименяем новые правила
   UdevReload;
+
+  MessageDlg(SReconnectDevice, mtInformation, [mbOK], 0);
 end;
 
 end.

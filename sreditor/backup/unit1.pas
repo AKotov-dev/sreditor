@@ -181,7 +181,7 @@ begin
   begin
     Memo2.Text := SNoAction;
     Memo1.SelStart := v - 1;
-    Memo1.SelLength := Length(Memo1.Lines[Memo1.CaretPos.Y] + 1);
+    Memo1.SelLength := Length(Memo1.Lines[Memo1.CaretPos.Y]) + 1;
     AddBtn.Enabled := False;
   end
   else
