@@ -7,7 +7,7 @@ SrEditor designed for automatically inserting rules for scanners that are not in
 
 It can also be useful: rm -rf ~/.sane  
   
-**Note_1:** Add the user to the desired groups `usermod -aG usb,scanners $(logname)`  
+**Note_1:** Add the user to the desired groups `usermod -aG usb,scanner $(logname)`  
 **Note_2:** For older devices, use the USB2 port to connect  
   
 ![](https://github.com/AKotov-dev/sreditor/blob/main/ScreenShot.png)
