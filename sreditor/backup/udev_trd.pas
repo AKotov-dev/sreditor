@@ -27,6 +27,7 @@ procedure StartUdevReload.Execute;
 var
   ExProcess: TProcess;
 begin
+  FreeOnTerminate := True; //Уничтожить по завершении
   ExProcess := TProcess.Create(nil);
   try
     ExProcess.Executable := 'bash';
@@ -36,6 +37,7 @@ begin
     ExProcess.Execute;
   finally
     ExProcess.Free;
+    Terminate;
   end;
 end;
 

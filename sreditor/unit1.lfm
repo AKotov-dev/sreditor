@@ -1,7 +1,7 @@
 object MainForm: TMainForm
   Left = 294
   Height = 759
-  Top = 124
+  Top = 73
   Width = 974
   ActiveControl = DevListBox
   Caption = 'MainForm'
@@ -19,6 +19,7 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     Left = 0
     Height = 171
+    Hint = 'Specify your scanner and click "Add" (+)'
     Top = 50
     Width = 974
     Anchors = [akTop, akLeft, akRight]
@@ -27,8 +28,10 @@ object MainForm: TMainForm
     Font.Name = 'Monospace'
     ItemHeight = 0
     OnClick = DevListBoxClick
+    ParentShowHint = False
     ParentFont = False
     ScrollWidth = 982
+    ShowHint = True
     TabOrder = 0
     TopIndex = -1
   end

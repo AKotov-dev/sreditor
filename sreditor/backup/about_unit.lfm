@@ -28,7 +28,7 @@ object AboutForm: TAboutForm
     Height = 187
     Top = 41
     Width = 320
-    Caption = 'Automatic addition of rules'#10' '#10'License: GPLv3'#10'Compilation: Lazarus 2.0.10'#10'Author: alex_q_2000 (C) 2021'#10' '#10'URL: https://github.com/AKotov-dev/sreditor'#10' '#10'Gratitude:'#10'Morgan Leijström, David GEIGER,'#10'Thomas Backlund, Aurelien Oudelet, Lewis Smith'
+    Caption = 'Automatic addition of rules'#10' '#10'License: GPLv3'#10'Compilation: Lazarus 2.2.0'#10'Author: alex_q_2000 (C) 2021'#10' '#10'URL: https://github.com/AKotov-dev/sreditor'#10' '#10'Gratitude:'#10'Morgan Leijström, David GEIGER,'#10'Thomas Backlund, Aurelien Oudelet, Lewis Smith'
     Font.Height = -13
     Font.Name = 'Sans'
     ParentFont = False

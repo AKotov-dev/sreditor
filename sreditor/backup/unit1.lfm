@@ -1,11 +1,11 @@
 object MainForm: TMainForm
-  Left = 296
-  Height = 740
-  Top = 85
+  Left = 294
+  Height = 759
+  Top = 73
   Width = 974
   ActiveControl = DevListBox
   Caption = 'MainForm'
-  ClientHeight = 740
+  ClientHeight = 759
   ClientWidth = 974
   OnCreate = FormCreate
   OnShow = FormShow
@@ -19,6 +19,7 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     Left = 0
     Height = 171
+    Hint = 'Specify your scanner and click "Add" (+)'
     Top = 50
     Width = 974
     Anchors = [akTop, akLeft, akRight]
@@ -205,7 +206,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = StaticText1
     AnchorSideBottom.Side = asrBottom
     Left = 0
-    Height = 357
+    Height = 376
     Top = 365
     Width = 974
     Align = alBottom
@@ -587,7 +588,7 @@ object MainForm: TMainForm
   object StaticText1: TStaticText
     Left = 0
     Height = 18
-    Top = 722
+    Top = 741
     Width = 974
     Align = alBottom
     Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru'

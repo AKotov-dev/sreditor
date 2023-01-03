@@ -92,7 +92,8 @@ begin
   try
     ExProcess.Executable := 'bash';
     ExProcess.Parameters.Add('-c');
-    ExProcess.Parameters.Add('lsusb | grep -vE "hub|Hub|Reader|Keyboard|Mouse"');
+    ExProcess.Parameters.Add(
+      'lsusb | grep -vE "hub|Hub|Reader|Keyboard|Mouse|VirtualBox"');
     ExProcess.Options := [poUsePipes, poStderrToOutPut];
     ExProcess.Execute;
 

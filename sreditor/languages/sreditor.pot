@@ -49,6 +49,10 @@ msgid ""
 "/usr/lib/udev/rules.d/60-libsane.rules"
 msgstr ""
 
+#: tmainform.devlistbox.hint
+msgid "Specify your scanner and click \"Add\" (+)"
+msgstr ""
+
 #: tmainform.label1.caption
 msgid "1) USB Devices list:"
 msgstr ""
