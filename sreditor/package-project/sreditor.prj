@@ -2,10 +2,10 @@
 name=sreditor
 
 [VERSION]
-version=0.4
+version=0.5
 
 [RELEASE]
-release=0.mrx8
+release=0.mrx9
 
 [GROUP]
 group=Applications/System
@@ -32,7 +32,7 @@ urlcopy=https://github.com/AKotov-dev/sreditor
 license=GPLv3
 
 [DEPS]
-deps=sane-backends
+deps=sane-backends gtk2
 
 [META]
 meta=0
@@ -54,18 +54,6 @@ deb=0
 4=/usr/share/doc/sreditor/
 5=/usr/share/polkit-1/actions/sreditor.policy
 
-[AFTERINSTALL]
-0=#ldconfig
-1=#update-desktop-database -q /usr/share/applications
-2=#update-mime-database /usr/share/mime
-3=#gtk-update-icon-cache -q -f /usr/share/icons/hicolor
-
-[AFTERREMOVE]
-0=#ldconfig
-1=#update-desktop-database -q /usr/share/applications
-2=#update-mime-database /usr/share/mime
-3=#gtk-update-icon-cache -q -f /usr/share/icons/hicolor
-
 [URL32]
 url32=https://github.com/AKotov-dev/sreditor
 
@@ -79,7 +67,7 @@ programname=SrEditor
 devtool=Lazarus
 
 [TOOLVERSION]
-toolversion=2.0.10
+toolversion=2.2.0
 
 [INFO]
 0=SrEditor - 60-libsane.rules editor for Scanners
@@ -88,10 +76,14 @@ toolversion=2.0.10
 3=2. If the device is not in the list of rules, the necessary line (2) will be offered to insert into the file with the rules
 4=3. Click the button "Plus" (Add & Apply)
 5=
-6=v0.4
-7=+ selecting the entire found string
-8=+ automatically adding a device description
+6=v0.5
+7=+ Adapting the source code for Mageia/ROSA Linux
+8=+ RPM Packages for Mageia-8 (ROSA-2021.1) and Mageia-9
 9=
-10=v0.3
-11=+ the first release. The basis of the project - ArEditor
-12=+ Requires: sane-backends
+10=v0.4
+11=+ selecting the entire found string
+12=+ automatically adding a device description
+13=
+14=v0.3
+15=+ the first release. The basis of the project - ArEditor
+16=+ Requires: sane-backends

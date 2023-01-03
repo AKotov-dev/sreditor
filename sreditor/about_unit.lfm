@@ -1,7 +1,7 @@
 object AboutForm: TAboutForm
-  Left = 366
+  Left = 313
   Height = 299
-  Top = 142
+  Top = 129
   Width = 461
   Anchors = [akLeft]
   Caption = 'About'
@@ -11,28 +11,26 @@ object AboutForm: TAboutForm
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poMainFormCenter
-  LCLVersion = '2.0.10.0'
+  LCLVersion = '2.2.0.4'
   object Label1: TLabel
     Left = 128
-    Height = 19
+    Height = 21
     Top = 8
     Width = 78
     Caption = 'SrEditor'
     Font.Height = -17
     Font.Name = 'Sans'
     Font.Style = [fsBold]
-    ParentColor = False
     ParentFont = False
   end
   object Label2: TLabel
     Left = 128
-    Height = 180
+    Height = 187
     Top = 41
-    Width = 284
-    Caption = 'Automatic addition of rules'#10#10'License: GPLv3'#10'Compilation: Lazarus 2.0.10'#10'Author: alex_q_2000 (C) 2021'#10#10'URL: https://github.com/AKotov-dev/sreditor'#10#10'Many thanks:'#10'Morgan Leijström, David GEIGER,'#10'Thomas Backlund, Aurelien Oudelet,'#10'Lewis Smith'
+    Width = 320
+    Caption = 'Automatic addition of rules'#10' '#10'License: GPLv3'#10'Compilation: Lazarus 2.2.0'#10'Author: alex_q_2000 (C) 2021'#10' '#10'URL: https://github.com/AKotov-dev/sreditor'#10' '#10'Gratitude:'#10'Morgan Leijström, David GEIGER,'#10'Thomas Backlund, Aurelien Oudelet, Lewis Smith'
     Font.Height = -13
     Font.Name = 'Sans'
-    ParentColor = False
     ParentFont = False
   end
   object Image1: TImage
@@ -352,7 +350,7 @@ object AboutForm: TAboutForm
     AnchorSideBottom.Side = asrBottom
     Left = 8
     Height = 8
-    Top = 238
+    Top = 245
     Width = 449
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 8
@@ -370,7 +368,7 @@ object AboutForm: TAboutForm
     AnchorSideBottom.Side = asrBottom
     Left = 193
     Height = 35
-    Top = 253
+    Top = 260
     Width = 78
     BorderSpacing.Top = 15
     BorderSpacing.Right = 172

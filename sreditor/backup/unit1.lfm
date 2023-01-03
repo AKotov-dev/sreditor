@@ -1,16 +1,16 @@
 object MainForm: TMainForm
-  Left = 298
-  Height = 802
-  Top = 32
-  Width = 984
+  Left = 296
+  Height = 740
+  Top = 85
+  Width = 974
   ActiveControl = DevListBox
   Caption = 'MainForm'
-  ClientHeight = 802
-  ClientWidth = 984
+  ClientHeight = 740
+  ClientWidth = 974
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poDesktopCenter
-  LCLVersion = '2.0.10.0'
+  LCLVersion = '2.2.0.4'
   object DevListBox: TListBox
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = UpdateBtn
@@ -20,7 +20,7 @@ object MainForm: TMainForm
     Left = 0
     Height = 171
     Top = 50
-    Width = 984
+    Width = 974
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 4
     Font.Height = -13
@@ -35,8 +35,8 @@ object MainForm: TMainForm
   object Label1: TLabel
     AnchorSideBottom.Control = DevListBox
     Left = 8
-    Height = 15
-    Top = 30
+    Height = 17
+    Top = 28
     Width = 144
     Anchors = [akLeft, akBottom]
     BorderSpacing.Bottom = 5
@@ -44,7 +44,6 @@ object MainForm: TMainForm
     Font.Height = -13
     Font.Name = 'Sans'
     Font.Style = [fsBold]
-    ParentColor = False
     ParentFont = False
   end
   object UpdateBtn: TSpeedButton
@@ -52,7 +51,7 @@ object MainForm: TMainForm
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Cursor = crHandPoint
-    Left = 915
+    Left = 905
     Height = 42
     Hint = 'Update the list'
     Top = 4
@@ -206,9 +205,9 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = StaticText1
     AnchorSideBottom.Side = asrBottom
     Left = 0
-    Height = 423
-    Top = 361
-    Width = 984
+    Height = 357
+    Top = 365
+    Width = 974
     Align = alBottom
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Top = 5
@@ -227,8 +226,8 @@ object MainForm: TMainForm
     AnchorSideTop.Control = Memo2
     AnchorSideTop.Side = asrBottom
     Left = 8
-    Height = 15
-    Top = 341
+    Height = 17
+    Top = 343
     Width = 511
     BorderSpacing.Top = 18
     BorderSpacing.Bottom = 5
@@ -236,7 +235,6 @@ object MainForm: TMainForm
     Font.Height = -13
     Font.Name = 'Sans'
     Font.Style = [fsBold]
-    ParentColor = False
     ParentFont = False
   end
   object Memo2: TMemo
@@ -246,8 +244,8 @@ object MainForm: TMainForm
     AnchorSideRight.Control = AddBtn
     Left = 0
     Height = 64
-    Top = 259
-    Width = 849
+    Top = 261
+    Width = 839
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 5
     BorderSpacing.Right = 1
@@ -264,7 +262,7 @@ object MainForm: TMainForm
     AnchorSideTop.Control = DevListBox
     AnchorSideTop.Side = asrBottom
     Left = 8
-    Height = 15
+    Height = 17
     Top = 239
     Width = 196
     BorderSpacing.Top = 18
@@ -273,7 +271,6 @@ object MainForm: TMainForm
     Font.Height = -13
     Font.Name = 'Sans'
     Font.Style = [fsBold]
-    ParentColor = False
     ParentFont = False
   end
   object DefaultBtn: TSpeedButton
@@ -283,10 +280,10 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = Memo2
     AnchorSideBottom.Side = asrBottom
     Cursor = crHandPoint
-    Left = 915
+    Left = 905
     Height = 64
-    Hint = 'Loads the default rules'#10'/usr/lib/udev/rules.d/60-libsane.rules'
-    Top = 259
+    Hint = 'Loads the default rules from'#10'/lib/udev/rules.d/60-libsane.rules or'#10'/usr/lib/udev/rules.d/60-libsane.rules'
+    Top = 261
     Width = 64
     Anchors = [akTop, akRight, akBottom]
     BorderSpacing.Right = 5
@@ -590,8 +587,8 @@ object MainForm: TMainForm
   object StaticText1: TStaticText
     Left = 0
     Height = 18
-    Top = 784
-    Width = 984
+    Top = 722
+    Width = 974
     Align = alBottom
     Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru'
     Color = clDefault
@@ -608,10 +605,10 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = Memo2
     AnchorSideBottom.Side = asrBottom
     Cursor = crHandPoint
-    Left = 850
+    Left = 840
     Height = 64
     Hint = 'Add and Apply'
-    Top = 259
+    Top = 261
     Width = 64
     Anchors = [akTop, akRight, akBottom]
     BorderSpacing.Right = 1
@@ -918,7 +915,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = UpdateBtn
     AnchorSideBottom.Side = asrBottom
     Cursor = crHandPoint
-    Left = 866
+    Left = 856
     Height = 42
     Hint = 'About'
     Top = 4
@@ -1065,17 +1062,17 @@ object MainForm: TMainForm
   object Label3: TLabel
     AnchorSideTop.Control = AboutBtn
     AnchorSideRight.Control = AboutBtn
-    Left = 546
-    Height = 30
+    Left = 522
+    Height = 34
     Top = 4
-    Width = 316
+    Width = 330
     Anchors = [akTop, akRight]
     BorderSpacing.Right = 4
-    Caption = 'Don''t forget to include the user in the usb group:'#10'usermod -aG usb $LOGNAME; reboot'
+    Caption = 'Don''t forget to add the user to the desired groups::'#10'usermod -aG usb,scanner $(logname); reboot'
+    Font.Color = clRed
     Font.Height = -13
     Font.Name = 'Sans'
     Font.Style = [fsItalic]
-    ParentColor = False
     ParentFont = False
   end
 end

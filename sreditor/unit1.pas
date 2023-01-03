@@ -46,13 +46,17 @@ resourcestring
   SNoAction = 'The device is already in the list of rules. No action is needed.';
   SFileNotFound =
     'The main rules file was not found:' + #10#13 +
-    '/usr/lib/udev/rules.d/60-libsane.rules';
+    '/lib/udev/rules.d/60-libsane.rules or ' + #10#13 +
+    '/usr/lib/udev/rules.d/60-libsane.rules!';
   SNoDevices = 'No devices were found...';
   SRestoreDefault = 'Your changes will be reset! Continue?';
-  SReconnectDevice = 'Reconnect your scanner.';
+  SReconnectDevice = 'Restart your computer.';
 
 var
   MainForm: TMainForm;
+
+  //Основной конфиг 60-libsane.rules (ROSA/Mageia - разный путь)
+  config: string;
 
 implementation
 
@@ -122,34 +126,41 @@ begin
   if MessageDlg(SRestoreDefault, mtWarning, [mbYes, mbNo], 0) = mrYes then
   begin
     //Copy Default rules
-    CopyFile('/usr/lib/udev/rules.d/60-libsane.rules',
-      '/etc/udev/rules.d/60-libsane.rules', [cffOverwriteFile]);
+    CopyFile(config, '/etc/udev/rules.d/60-libsane.rules', [cffOverwriteFile]);
 
     Application.ProcessMessages;
     RestoreDefault;
   end;
 end;
 
+//Есть ли основной файл правил? Нет - Выход! (ROSA/Mageia)
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
-  //Есть ли основной файл правил? Нет - Выход!
-  if not FileExists('/usr/lib/udev/rules.d/60-libsane.rules') then
+  //Определяем путь к правилам
+  config := '';
+  if FileExists('/usr/lib/udev/rules.d/60-libsane.rules') then
+    config := '/usr/lib/udev/rules.d/60-libsane.rules'
+  else
+  if FileExists('/lib/udev/rules.d/60-libsane.rules') then
+    config := '/lib/udev/rules.d/60-libsane.rules';
+
+  //Если правил нет - отбой
+  if config = '' then
   begin
     MessageDlg(SFileNotFound, mtError, [mbOK], 0);
     Application.Terminate;
   end
   else
+  //Если default ещё не копировался - копируем
   if not FileExists('/etc/udev/rules.d/60-libsane.rules') then
-    //Copy Default rules
-    CopyFile('/usr/lib/udev/rules.d/60-libsane.rules',
-      '/etc/udev/rules.d/60-libsane.rules', [cffOverwriteFile]);
+    CopyFile(config, '/etc/udev/rules.d/60-libsane.rules', [cffOverwriteFile]);
 
   MainForm.Caption := Application.Title;
 end;
 
+//Загружаем файл 60-libsane.rules и перечитываем устройства
 procedure TMainForm.FormShow(Sender: TObject);
 begin
-  //Загружаем файл 60-libsane.rules и перечитываем устройства
   UpdateBtn.Click;
 end;
 
@@ -160,7 +171,7 @@ begin
   AboutForm.ShowModal;
 end;
 
-//Поиск idVerndor/idProduct и установка курсора + select
+//Поиск idVerndor:idProduct и установка курсора + select
 procedure TMainForm.DevListBoxClick(Sender: TObject);
 var
   v: integer;
@@ -206,7 +217,7 @@ begin
     SetFocus;
     SelStart := Pos('# The following rule will disable USB autosuspend for the device',
       Text);
-    //  Lines.Insert(CaretPos.Y - 1, '');
+    //Lines.Insert(CaretPos.Y - 1, '');
     Lines.Insert(CaretPos.Y + 0, Memo2.Lines[0]);
     Lines.Insert(CaretPos.Y + 1, Memo2.Lines[1]);
     Lines.Insert(CaretPos.Y + 2, '');
